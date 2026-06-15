@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Welcome to Bhopal — The City of Lakes. Explore culture, opportunities, food, and experiences in the heart of India." />
+  <title>Welcome to Bhopal — Digital City Gateway</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+</head>
+<body>
+
+  <!-- Progress bar -->
+  <div id="progress-bar"></div>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-badge">W</div>
+      <span>Welcome to Bhopal</span>
+    </a>
+    <div class="nav-links">
+      <a href="#explore">Explore</a>
+      <a href="#city">City Life</a>
+      <a href="#opportunities">Opportunities</a>
+      <a href="#testimonials">Stories</a>
+      <a href="https://www.instagram.com/igv.bhopal?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="nav-cta">Follow IGV ↗</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#explore" onclick="closeMobile()">Explore</a>
+    <a href="#city" onclick="closeMobile()">City Life</a>
+    <a href="#opportunities" onclick="closeMobile()">Opportunities</a>
+    <a href="#testimonials" onclick="closeMobile()">Stories</a>
+    <a href="https://www.instagram.com/igv.bhopal?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Follow IGV ↗</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-dot"></span>
+      City of Lakes · Madhya Pradesh · India
+    </div>
+    <h1>
+      <span class="line-city">Discover Bhopal,</span>
+      <span class="line-lakes">Feel the Belonging</span>
+    </h1>
+    <p class="hero-sub">Your digital gateway to the heart of India — culture, opportunities, food, community, and unforgettable experiences await.</p>
+    <div class="hero-actions">
+      <a href="#explore" class="btn-primary">Explore the City →</a>
+      <a href="#opportunities" class="btn-ghost">Join AIESEC Bhopal</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">1.9M+</div>
+        <div class="hero-stat-label">City Population</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">2</div>
+        <div class="hero-stat-label">UNESCO World Heritage Sites Nearby</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">30+</div>
+        <div class="hero-stat-label">Lakes &amp; Water Bodies</div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-mouse"></div>
+      <span class="scroll-text">Scroll to explore</span>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- EXPLORE SECTION -->
+  <section id="explore">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-label">City Resources</div>
+        <h2 class="section-title">Everything about <em>Bhopal</em></h2>
+        <p class="section-sub">From city guides to cost booklets — every resource you need to navigate and love this city.</p>
+      </div>
+      <div class="explore-grid">
+        <a href="https://www.canva.com/design/DAHCuDhtVPo/HG2iH0Bc5wsIXUKjUJ5PSw/edit" target="_blank" class="card reveal reveal-delay-1">
+          <div class="card-icon" style="background:rgba(79,124,255,0.12)">🗺️</div>
+          <span class="card-tag badge-blue">Featured Guide</span>
+          <h3>City Booklet</h3>
+          <p>A comprehensive visual guide to Bhopal's neighbourhoods, landmarks, culture, and essentials.</p>
+          <span class="card-arrow">→</span>
+        </a>
+        <a href="https://canva.link/ey5094ypdpklijh" target="_blank" class="card reveal reveal-delay-2">
+          <div class="card-icon" style="background:rgba(240,180,41,0.12)">💰</div>
+          <span class="card-tag badge-gold">Smart Living</span>
+          <h3>Cost Booklet</h3>
+          <p>Real cost-of-living data — food, transport, housing, and lifestyle expenses for newcomers.</p>
+          <span class="card-arrow">→</span>
+        </a>
+        <a href="https://www.instagram.com/_chronicles_2026_" target="_blank" class="card reveal reveal-delay-3">
+          <div class="card-icon" style="background:rgba(255,95,160,0.12)">✨</div>
+          <span class="card-tag badge-pink">Stories</span>
+          <h3>Chronicles 2026</h3>
+          <p>Real stories, candid moments, and authentic experiences from the Bhopal community.</p>
+          <span class="card-arrow">→</span>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1EBqVO8-3Wv6zmnk9yRNLcXaOGJTEdTCV" target="_blank" class="card reveal reveal-delay-1">
+          <div class="card-icon" style="background:rgba(0,212,170,0.12)">🌏</div>
+          <span class="card-tag badge-teal">AIESEC</span>
+          <h3>EP Packages</h3>
+          <p>Explore international exchange programme packages curated for Bhopal's global community.</p>
+          <span class="card-arrow">→</span>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1-qoi7-t1ZczULPFevLGhZzaFvim4LtUk" target="_blank" class="card reveal reveal-delay-2">
+          <div class="card-icon" style="background:rgba(124,92,255,0.12)">💬</div>
+          <span class="card-tag badge-purple">Community</span>
+          <h3>Experiences &amp; Testimonials</h3>
+          <p>Read first-hand accounts from people who lived, worked, and grew in Bhopal.</p>
+          <span class="card-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- AIESEC SEARCH TOOL -->
+  <section id="opportunities">
+    <div class="container">
+      <div class="search-section reveal">
+        <div class="section-label" style="justify-content:center">AIESEC in Bhopal</div>
+        <h2 class="section-title" style="text-align:center">Find Your <em>Opportunity</em></h2>
+        <p class="section-sub" style="margin:0.75rem auto 0;text-align:center">Search internships, projects, and job descriptions — your next chapter starts here.</p>
+        <div class="search-box">
+          <input type="text" class="search-input" placeholder="Search roles, projects, skills…" id="search-query" />
+          <button class="search-btn" onclick="openSearch()">Search ↗</button>
+        </div>
+        <div class="search-links">
+          <a href="https://docs.google.com/spreadsheets/d/1NjDweAu9sN0Ul72VR58KPVCHZpWi8VmAEhuRsIxtgpo" target="_blank" class="search-link">📊 Search Tool 26.27</a>
+          <a href="https://drive.google.com/drive/folders/1ltNlwLcGaJNhs9JLMILOxgFo4krVev3g" target="_blank" class="search-link">📄 Job Descriptions</a>
+          <a href="https://drive.google.com/drive/folders/1GVfHC7Ie1samd3vS9bCqtI0KXxXKGj6A" target="_blank" class="search-link">📋 Project Booklets</a>
+        </div>
+      </div>
+
+      <!-- Bento opportunities -->
+      <div style="margin-top:3rem" class="reveal">
+        <div class="section-head">
+          <div class="section-label">What's Available</div>
+          <h2 class="section-title">Open <em>Opportunities</em></h2>
+        </div>
+      </div>
+      <div class="bento-grid reveal">
+        <div class="bento-card bento-a" style="background:linear-gradient(135deg,rgba(79,124,255,0.08),rgba(124,92,255,0.04))">
+          <span class="bento-badge badge-blue">Global Exchange</span>
+          <div class="big-num">26.27</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.5rem">AIESEC EP Cycle</h3>
+          <p style="color:var(--text2);font-size:0.875rem;line-height:1.65">Join the 2026–27 exchange cycle. Work, volunteer, or intern globally while representing Bhopal on the world stage.</p>
+          <a href="https://drive.google.com/drive/folders/1EBqVO8-3Wv6zmnk9yRNLcXaOGJTEdTCV" target="_blank" class="btn-primary" style="margin-top:1.25rem;display:inline-flex;font-size:0.85rem;padding:0.6rem 1.25rem">Browse Packages →</a>
+        </div>
+        <div class="bento-card bento-b">
+          <span class="bento-badge badge-gold">Career</span>
+          <div class="big-num" style="background:linear-gradient(135deg,var(--gold),#ffda85);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">50+</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.4rem">Job Descriptions</h3>
+          <p style="color:var(--text2);font-size:0.8rem;line-height:1.6">Curated roles across sectors. Find your fit in Bhopal's growing economy.</p>
+          <a href="https://drive.google.com/drive/folders/1ltNlwLcGaJNhs9JLMILOxgFo4krVev3g" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:1rem;color:var(--gold);font-size:0.8rem;font-weight:600;text-decoration:none">View JDs →</a>
+        </div>
+        <div class="bento-card bento-c">
+          <span class="bento-badge badge-teal">Projects</span>
+          <div class="big-num" style="background:linear-gradient(135deg,var(--teal),#80ffdf);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">10+</div>
+          <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:0.4rem">Project Booklets</h3>
+          <p style="color:var(--text2);font-size:0.8rem;line-height:1.6">Deep-dive into ongoing projects in Bhopal looking for passionate contributors.</p>
+          <a href="https://drive.google.com/drive/folders/1GVfHC7Ie1samd3vS9bCqtI0KXxXKGj6A" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:1rem;color:var(--teal);font-size:0.8rem;font-weight:600;text-decoration:none">Explore →</a>
+        </div>
+        <div class="bento-card bento-d">
+          <span class="bento-badge badge-pink">Community</span>
+          <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:0.5rem">Chronicles ✨</h3>
+          <p style="color:var(--text2);font-size:0.8rem;line-height:1.6">Follow real experiences from exchange participants living in and coming to Bhopal.</p>
+          <a href="https://www.instagram.com/_chronicles_2026_" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:1rem;color:var(--pink);font-size:0.8rem;font-weight:600;text-decoration:none">Follow ↗</a>
+        </div>
+        <div class="bento-card bento-e">
+          <span class="bento-badge badge-purple">Heritage</span>
+          <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:0.5rem">City of Lakes</h3>
+          <p style="color:var(--text2);font-size:0.8rem;line-height:1.6">Upper Lake, Lower Lake, Bhoj Wetland — a UNESCO Ramsar site at your doorstep.</p>
+          <div style="font-size:2rem;margin-top:1rem">🏞️</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- CITY LIFE -->
+  <section id="city">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-label">Explore Bhopal</div>
+        <h2 class="section-title">A City Like <em>No Other</em></h2>
+        <p class="section-sub">Ancient heritage and modern energy in one of India's most liveable cities.</p>
+      </div>
+      <div class="city-grid">
+        <div class="city-card reveal reveal-delay-1">
+          <div class="city-card-thumb" style="background:linear-gradient(135deg,rgba(79,124,255,0.12),rgba(79,124,255,0.04))">🕌</div>
+          <div class="city-card-body">
+            <h4>Heritage &amp; History</h4>
+            <p>From the magnificent Taj-ul-Masajid to the Bhimbetka Rock Shelters — Bhopal wears its history proudly.</p>
+          </div>
+        </div>
+        <div class="city-card reveal reveal-delay-2">
+          <div class="city-card-thumb" style="background:linear-gradient(135deg,rgba(0,212,170,0.12),rgba(0,212,170,0.04))">🌊</div>
+          <div class="city-card-body">
+            <h4>Lakes &amp; Nature</h4>
+            <p>30+ lakes, the Van Vihar National Park, and lush green landscapes make Bhopal a nature lover's haven.</p>
+          </div>
+        </div>
+        <div class="city-card reveal reveal-delay-3">
+          <div class="city-card-thumb" style="background:linear-gradient(135deg,rgba(240,180,41,0.12),rgba(240,180,41,0.04))">🍛</div>
+          <div class="city-card-body">
+            <h4>Food Culture</h4>
+            <p>Bhopal's street food is legendary — seekh kebabs, poha, bhutte ka kees, and the iconic bhopali gosht korma.</p>
+          </div>
+        </div>
+        <div class="city-card reveal reveal-delay-1">
+          <div class="city-card-thumb" style="background:linear-gradient(135deg,rgba(255,95,160,0.12),rgba(255,95,160,0.04))">🎨</div>
+          <div class="city-card-body">
+            <h4>Art &amp; Culture</h4>
+            <p>The Bharat Bhavan cultural complex, Bhojpur temple, and a thriving indie arts scene define Bhopal's creative soul.</p>
+          </div>
+        </div>
+        <div class="city-card reveal reveal-delay-2">
+          <div class="city-card-thumb" style="background:linear-gradient(135deg,rgba(124,92,255,0.12),rgba(124,92,255,0.04))">🎓</div>
+          <div class="city-card-body">
+            <h4>Education Hub</h4>
+            <p>IIT Bhopal, NIT, AIIMS, and dozens of premier institutions make it a dynamic city for students.</p>
+          </div>
+        </div>
+        <div class="city-card reveal reveal-delay-3">
+          <div class="city-card-thumb" style="background:linear-gradient(135deg,rgba(0,212,170,0.08),rgba(79,124,255,0.08))">🤝</div>
+          <div class="city-card-body">
+            <h4>Community First</h4>
+            <p>Warm, welcoming people, tight-knit communities, and a culture of belonging that lives up to every promise.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- CHRONICLES -->
+  <section>
+    <div class="container">
+      <div class="chronicles-feature reveal">
+        <div>
+          <div class="section-label">Chronicles 2026</div>
+          <h2 class="section-title">Real Stories,<br><em>Real People</em></h2>
+          <p class="section-sub" style="margin-top:0.75rem">Chronicles is our living archive of Bhopal experiences — raw, personal, and authentic. Follow along as our community documents their journey.</p>
+          <div style="display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap">
+            <a href="https://www.instagram.com/_chronicles_2026_" target="_blank" class="btn-primary" style="font-size:0.9rem;padding:0.75rem 1.5rem">Follow Chronicles ↗</a>
+            <a href="https://drive.google.com/drive/folders/1-qoi7-t1ZczULPFevLGhZzaFvim4LtUk" target="_blank" class="btn-ghost" style="font-size:0.9rem;padding:0.75rem 1.5rem">Read All Experiences</a>
+          </div>
+        </div>
+        <div class="chronicles-posts">
+          <div class="chronicle-post">
+            <div class="chronicle-num">01</div>
+            <div>
+              <div class="chronicle-title">Arriving in Bhopal as an Exchange Participant</div>
+              <div class="chronicle-meta">First impressions · Culture shock · Belonging</div>
+            </div>
+          </div>
+          <div class="chronicle-post">
+            <div class="chronicle-num">02</div>
+            <div>
+              <div class="chronicle-title">Street Food Trails: A Week of Discovery</div>
+              <div class="chronicle-meta">Food culture · Local markets · Hidden gems</div>
+            </div>
+          </div>
+          <div class="chronicle-post">
+            <div class="chronicle-num">03</div>
+            <div>
+              <div class="chronicle-title">Working with AIESEC Bhopal — What I Learned</div>
+              <div class="chronicle-meta">Leadership · Growth · Friendships</div>
+            </div>
+          </div>
+          <div class="chronicle-post">
+            <div class="chronicle-num">04</div>
+            <div>
+              <div class="chronicle-title">Sunset at Upper Lake — A Moment I'll Never Forget</div>
+              <div class="chronicle-meta">Nature · Photography · Stillness</div>
+            </div>
+          </div>
+          <a href="https://www.instagram.com/_chronicles_2026_" target="_blank" style="display:flex;align-items:center;gap:8px;color:var(--accent);font-size:0.85rem;font-weight:600;text-decoration:none;padding:0.75rem 0">View all chronicles on Instagram →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-label">Voices of Bhopal</div>
+        <h2 class="section-title">What People <em>Say</em></h2>
+        <p class="section-sub">From exchange participants to lifelong residents — here's what makes Bhopal unforgettable.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial reveal reveal-delay-1">
+          <div class="testimonial-quote">"</div>
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">Coming to Bhopal felt like arriving home even though I was thousands of kilometres away. The warmth of the people here is something I've never experienced anywhere else in the world.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:linear-gradient(135deg,var(--accent),var(--accent2))">AK</div>
+            <div>
+              <div class="testimonial-name">Arjun K.</div>
+              <div class="testimonial-role">EP from Mumbai · AIESEC 2025</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial reveal reveal-delay-2">
+          <div class="testimonial-quote">"</div>
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">The city's energy surprised me. It's calm and historic but also modern and ambitious. I came for three months and stayed for a year. Bhopal has a way of doing that to you.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:linear-gradient(135deg,var(--teal),#0090aa)">SL</div>
+            <div>
+              <div class="testimonial-name">Sofia L.</div>
+              <div class="testimonial-role">Exchange Participant from Brazil</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial reveal reveal-delay-3">
+          <div class="testimonial-quote">"</div>
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">The AIESEC Bhopal team is phenomenal. They made every step of the process smooth, and the city itself exceeded every expectation. The food alone is worth the trip.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:linear-gradient(135deg,var(--gold),#e08000)">RM</div>
+            <div>
+              <div class="testimonial-name">Riya M.</div>
+              <div class="testimonial-role">Volunteer · Global Citizen Programme</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2.5rem" class="reveal">
+        <a href="https://drive.google.com/drive/folders/1-qoi7-t1ZczULPFevLGhZzaFvim4LtUk" target="_blank" class="btn-ghost">Read All Testimonials →</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- FAQ -->
+  <section>
+    <div class="container">
+      <div class="section-head reveal" style="text-align:center">
+        <div class="section-label" style="justify-content:center">Questions</div>
+        <h2 class="section-title">Things People <em>Ask</em></h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal" onclick="toggleFaq(this)">
+          <button class="faq-q">
+            What is AIESEC in Bhopal?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">AIESEC in Bhopal is the local chapter of the world's largest youth-run organisation. It connects young people with international internship and volunteer opportunities, while also hosting incoming exchange participants in Bhopal. Join to develop leadership skills, experience global cultures, and build a lifelong network.</div>
+        </div>
+        <div class="faq-item reveal" onclick="toggleFaq(this)">
+          <button class="faq-q">
+            How do I apply for an EP (Exchange Participant) programme?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">Browse the EP Packages collection on Google Drive, then connect with the AIESEC Bhopal team through Instagram or the search tool. You'll get guidance on which programme fits your background, how to apply, and what to expect during your exchange.</div>
+        </div>
+        <div class="faq-item reveal" onclick="toggleFaq(this)">
+          <button class="faq-q">
+            What is the cost of living in Bhopal?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">Bhopal is one of India's most affordable major cities. A comfortable lifestyle, including accommodation, food, transport, and leisure, can typically be maintained for ₹12,000–₹20,000 per month. Our Cost Booklet breaks this down in detail with real data.</div>
+        </div>
+        <div class="faq-item reveal" onclick="toggleFaq(this)">
+          <button class="faq-q">
+            What languages do people speak in Bhopal?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">Hindi is the primary language, and English is widely spoken among students, professionals, and in business contexts. The AIESEC community is international and communicates primarily in English, so newcomers are always welcome.</div>
+        </div>
+        <div class="faq-item reveal" onclick="toggleFaq(this)">
+          <button class="faq-q">
+            Is Bhopal safe for visitors and exchange participants?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">Yes, Bhopal is widely regarded as one of the safer and more welcoming cities in central India. The community is known for hospitality, and the AIESEC team provides on-ground support throughout your stay to ensure a smooth and safe experience.</div>
+        </div>
+        <div class="faq-item reveal" onclick="toggleFaq(this)">
+          <button class="faq-q">
+            How do I follow Chronicles and stay updated?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">Follow <a href="https://www.instagram.com/_chronicles_2026_" target="_blank" style="color:var(--accent)">@_chronicles_2026_</a> on Instagram for regular updates, stories, and experiences from the Bhopal community. You can also access the full archive on Google Drive via the link on this page.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- CTA BANNER -->
+  <section style="padding:5rem 2rem">
+    <div class="container">
+      <div class="reveal" style="text-align:center;background:linear-gradient(135deg,rgba(79,124,255,0.1),rgba(124,92,255,0.08));border:1px solid rgba(79,124,255,0.2);border-radius:var(--radius-xl);padding:4rem 2rem;position:relative;overflow:hidden">
+        <div style="position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:400px;height:200px;background:radial-gradient(ellipse,rgba(79,124,255,0.15),transparent 70%);pointer-events:none"></div>
+        <div class="section-label" style="justify-content:center;margin-bottom:1.25rem">Ready to Begin?</div>
+        <h2 style="font-size:clamp(1.8rem,4vw,3rem);font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin-bottom:1rem">
+          Join the <span style="background:linear-gradient(135deg,var(--gold),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Bhopal Family</span>
+        </h2>
+        <p style="color:var(--text2);max-width:480px;margin:0 auto 2rem;font-size:1rem;line-height:1.7">Whether you're an exchange participant, a local explorer, or someone chasing opportunity — Bhopal welcomes you with open arms.</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+          <a href="https://docs.google.com/spreadsheets/d/1NjDweAu9sN0Ul72VR58KPVCHZpWi8VmAEhuRsIxtgpo" target="_blank" class="btn-primary">Use the Search Tool →</a>
+          <a href="https://www.instagram.com/igv.bhopal?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn-ghost">Follow on Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="text-decoration:none">
+          <div class="nav-logo-badge">W</div>
+          <span style="font-weight:700">Welcome to Bhopal</span>
+        </a>
+        <p>Your digital gateway to the City of Lakes. Discover, explore, and belong in one of India's most vibrant and welcoming cities.</p>
+        <div class="footer-socials" style="margin-top:1.25rem">
+          <a href="https://www.instagram.com/igv.bhopal?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-btn" aria-label="Instagram">📷</a>
+          <a href="https://docs.google.com/spreadsheets/d/1NjDweAu9sN0Ul72VR58KPVCHZpWi8VmAEhuRsIxtgpo" target="_blank" class="social-btn" aria-label="Search Tool">🔍</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <a href="https://www.canva.com/design/DAHCuDhtVPo/HG2iH0Bc5wsIXUKjUJ5PSw/edit" target="_blank">City Booklet</a>
+        <a href="https://canva.link/ey5094ypdpklijh" target="_blank">Cost Booklet</a>
+        <a href="https://www.instagram.com/_chronicles_2026_" target="_blank">Chronicles ✨</a>
+        <a href="https://drive.google.com/drive/folders/1-qoi7-t1ZczULPFevLGhZzaFvim4LtUk" target="_blank">Testimonials</a>
+      </div>
+      <div class="footer-col">
+        <h5>Opportunities</h5>
+        <a href="https://docs.google.com/spreadsheets/d/1NjDweAu9sN0Ul72VR58KPVCHZpWi8VmAEhuRsIxtgpo" target="_blank">AIESEC Search Tool</a>
+        <a href="https://drive.google.com/drive/folders/1ltNlwLcGaJNhs9JLMILOxgFo4krVev3g" target="_blank">Job Descriptions</a>
+        <a href="https://drive.google.com/drive/folders/1GVfHC7Ie1samd3vS9bCqtI0KXxXKGj6A" target="_blank">Project Booklets</a>
+        <a href="https://drive.google.com/drive/folders/1EBqVO8-3Wv6zmnk9yRNLcXaOGJTEdTCV" target="_blank">EP Packages</a>
+      </div>
+      <div class="footer-col">
+        <h5>City Info</h5>
+        <a href="#city">Heritage Sites</a>
+        <a href="#city">Food Culture</a>
+        <a href="#city">Lakes &amp; Nature</a>
+        <a href="#city">Education</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Welcome to Bhopal · AIESEC in Bhopal · Made with 💙 for the City of Lakes</p>
+      <p style="color:var(--text3)">Bhopal, Madhya Pradesh, India</p>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

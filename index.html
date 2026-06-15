@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Welcome to Bhopal — The City of Lakes. Explore culture, opportunities, food, and experiences in the heart of India."/>
+<title>Welcome to Bhopal — Digital City Gateway</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #050811;
+    --bg2: #0a1020;
+    --bg3: #0f1830;
+    --surface: rgba(255,255,255,0.04);
+    --surface2: rgba(255,255,255,0.07);
+    --border: rgba(255,255,255,0.09);
+    --border2: rgba(255,255,255,0.15);
+    --text: #f0f4ff;
+    --text2: #8a9bbf;
+    --text3: #5a6a8a;
+    --accent: #4f7cff;
+    --accent2: #7c5cff;
+    --gold: #f0b429;
+    --teal: #00d4aa;
+    --pink: #ff5fa0;
+    --radius: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 0 2rem;
+    height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(5,8,17,0.7);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s ease;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 700; font-size: 1rem; color: var(--text);
+    text-decoration: none; letter-spacing: -0.01em;
+  }
+  .nav-logo-badge {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 800; color: #fff;
+  }
+  .nav-links { display: flex; align-items: center; gap: 0.25rem; }
+  .nav-links a {
+    padding: 0.4rem 0.8rem; border-radius: 8px;
+    color: var(--text2); text-decoration: none;
+    font-size: 0.875rem; font-weight: 500;
+    transition: all 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); background: var(--surface2); }
+  .nav-cta {
+    padding: 0.45rem 1rem !important;
+    background: linear-gradient(135deg, var(--accent), var(--accent2)) !important;
+    color: #fff !important; border-radius: 8px !important;
+    font-size: 0.875rem !important; font-weight: 600 !important;
+  }
+  .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+  .hamburger { display: none; cursor: pointer; padding: 4px; border: none; background: none; color: var(--text2); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 6rem;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% -10%, rgba(79,124,255,0.18) 0%, transparent 65%),
+      radial-gradient(ellipse 50% 40% at 80% 80%, rgba(124,92,255,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 30% at 10% 70%, rgba(0,212,170,0.08) 0%, transparent 50%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; z-index: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 16px; border-radius: 100px;
+    border: 1px solid rgba(79,124,255,0.3);
+    background: rgba(79,124,255,0.08);
+    font-size: 0.8rem; font-weight: 600;
+    color: #7ea4ff; letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 2rem; position: relative; z-index: 1;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero-eyebrow-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent); animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    font-weight: 800; line-height: 1.05;
+    letter-spacing: -0.02em;
+    position: relative; z-index: 1;
+    animation: fadeUp 0.9s 0.1s ease both;
+  }
+  .hero h1 .line-city {
+    display: block;
+    background: linear-gradient(135deg, #fff 0%, #c0d0ff 50%, #a0baff 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero h1 .line-lakes {
+    display: block; font-style: italic;
+    background: linear-gradient(135deg, var(--gold) 0%, #ffda85 50%, var(--teal) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--text2); max-width: 520px;
+    margin: 1.5rem auto 0; line-height: 1.7;
+    position: relative; z-index: 1;
+    animation: fadeUp 1s 0.2s ease both;
+  }
+  .hero-actions {
+    display: flex; flex-wrap: wrap; gap: 1rem;
+    justify-content: center; margin-top: 2.5rem;
+    position: relative; z-index: 1;
+    animation: fadeUp 1s 0.3s ease both;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 0.875rem 2rem; border-radius: 100px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff; font-weight: 600; font-size: 0.95rem;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: all 0.25s; box-shadow: 0 0 40px rgba(79,124,255,0.3);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(79,124,255,0.45); }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 0.875rem 2rem; border-radius: 100px;
+    border: 1px solid var(--border2); color: var(--text);
+    font-weight: 500; font-size: 0.95rem;
+    text-decoration: none; background: var(--surface);
+    transition: all 0.25s; backdrop-filter: blur(8px);
+  }
+  .btn-ghost:hover { background: var(--surface2); border-color: rgba(255,255,255,0.25); transform: translateY(-2px); }
+  .hero-stats {
+    display: flex; gap: 3rem; justify-content: center;
+    margin-top: 4rem; position: relative; z-index: 1;
+    animation: fadeUp 1s 0.4s ease both;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat-num {
+    font-size: 2rem; font-weight: 800; line-height: 1;
+    background: linear-gradient(135deg, #fff, #8aa8ff);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .hero-stat-label { font-size: 0.75rem; color: var(--text3); margin-top: 4px; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 500; }
+  .hero-divider { width: 1px; background: var(--border); }
+
+  /* Scroll indicator */
+  .scroll-indicator {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 8px;
+    animation: fadeUp 1s 0.6s ease both;
+  }
+  .scroll-mouse {
+    width: 22px; height: 36px; border: 1.5px solid var(--border2);
+    border-radius: 100px; position: relative;
+  }
+  .scroll-mouse::after {
+    content: ''; position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+    width: 3px; height: 7px; background: var(--accent);
+    border-radius: 100px; animation: scrollDown 1.5s infinite;
+  }
+  @keyframes scrollDown { 0%{opacity:1;transform:translateX(-50%) translateY(0)} 100%{opacity:0;transform:translateX(-50%) translateY(10px)} }
+  .scroll-text { font-size: 0.7rem; color: var(--text3); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+  /* ── SECTION SHELL ── */
+  section { padding: 6rem 2rem; position: relative; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .section-label::before {
+    content: ''; display: block; width: 20px; height: 1.5px; background: var(--accent);
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800; line-height: 1.15; letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .section-sub {
+    color: var(--text2); font-size: 1.05rem; line-height: 1.7;
+    max-width: 520px; margin-top: 0.75rem;
+  }
+  .section-head { margin-bottom: 3rem; }
+
+  /* ── EXPLORE CARDS ── */
+  .explore-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    transition: all 0.3s ease;
+    position: relative; overflow: hidden;
+    text-decoration: none; color: inherit; display: block;
+  }
+  .card::before {
+    content: ''; position: absolute; inset: 0; border-radius: inherit;
+    background: linear-gradient(135deg, rgba(79,124,255,0.06), transparent);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .card:hover { border-color: var(--border2); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+  .card:hover::before { opacity: 1; }
+  .card-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; margin-bottom: 1rem;
+  }
+  .card-tag {
+    display: inline-block; padding: 3px 10px; border-radius: 100px;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+  .card p { font-size: 0.875rem; color: var(--text2); line-height: 1.6; }
+  .card-arrow {
+    position: absolute; top: 1.75rem; right: 1.75rem;
+    opacity: 0; transition: all 0.25s;
+    color: var(--accent); font-size: 1.25rem; transform: translateX(-6px);
+  }
+  .card:hover .card-arrow { opacity: 1; transform: translateX(0); }
+
+  /* ── CATEGORIES ── */
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .cat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer; transition: all 0.3s;
+    text-decoration: none; color: inherit; display: block;
+  }
+  .cat-card:hover { transform: translateY(-4px); border-color: var(--border2); background: var(--surface2); }
+  .cat-emoji { font-size: 2rem; display: block; margin-bottom: 0.75rem; }
+  .cat-name { font-size: 0.95rem; font-weight: 600; }
+  .cat-count { font-size: 0.75rem; color: var(--text3); margin-top: 2px; }
+
+  /* ── AIESEC SEARCH TOOL SECTION ── */
+  .search-section {
+    background: linear-gradient(135deg, rgba(79,124,255,0.06), rgba(124,92,255,0.04));
+    border: 1px solid rgba(79,124,255,0.15);
+    border-radius: var(--radius-xl);
+    padding: 4rem 3rem;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .search-section::before {
+    content: ''; position: absolute;
+    top: -80px; right: -80px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(79,124,255,0.12), transparent 70%);
+    pointer-events: none;
+  }
+  .search-box {
+    display: flex; gap: 0.75rem; max-width: 540px;
+    margin: 2rem auto 0; position: relative;
+  }
+  .search-input {
+    flex: 1; background: rgba(255,255,255,0.06);
+    border: 1px solid var(--border2);
+    border-radius: 100px; padding: 0.875rem 1.5rem;
+    color: var(--text); font-size: 0.9rem; font-family: inherit;
+    outline: none; transition: all 0.2s;
+  }
+  .search-input::placeholder { color: var(--text3); }
+  .search-input:focus { border-color: var(--accent); background: rgba(79,124,255,0.06); box-shadow: 0 0 0 3px rgba(79,124,255,0.12); }
+  .search-btn {
+    padding: 0.875rem 1.5rem; border-radius: 100px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff; font-weight: 600; font-size: 0.9rem;
+    border: none; cursor: pointer; transition: all 0.25s;
+    white-space: nowrap;
+  }
+  .search-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 30px rgba(79,124,255,0.4); }
+  .search-links {
+    display: flex; flex-wrap: wrap; gap: 0.75rem;
+    justify-content: center; margin-top: 1.5rem;
+  }
+  .search-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 0.4rem 1rem; border-radius: 100px;
+    border: 1px solid var(--border);
+    color: var(--text2); font-size: 0.8rem; font-weight: 500;
+    text-decoration: none; transition: all 0.2s; background: var(--surface);
+  }
+  .search-link:hover { color: var(--text); border-color: var(--border2); background: var(--surface2); }
+
+  /* ── OPPORTUNITIES BENTO ── */
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    gap: 1.25rem;
+  }
+  .bento-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    transition: all 0.3s; overflow: hidden; position: relative;
+    text-decoration: none; color: inherit;
+  }
+  .bento-card:hover { border-color: var(--border2); transform: translateY(-3px); box-shadow: 0 20px 50px rgba(0,0,0,0.35); }
+  .bento-a { grid-column: span 7; grid-row: span 1; }
+  .bento-b { grid-column: span 5; grid-row: span 1; }
+  .bento-c { grid-column: span 4; grid-row: span 1; }
+  .bento-d { grid-column: span 4; grid-row: span 1; }
+  .bento-e { grid-column: span 4; grid-row: span 1; }
+  .bento-card .big-num {
+    font-size: 3.5rem; font-weight: 900; line-height: 1;
+    letter-spacing: -0.03em; margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--text), rgba(255,255,255,0.5));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .bento-badge {
+    display: inline-block; padding: 4px 12px; border-radius: 100px;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em;
+    text-transform: uppercase; margin-bottom: 1rem;
+  }
+  .badge-blue { background: rgba(79,124,255,0.15); color: #7ea4ff; }
+  .badge-gold { background: rgba(240,180,41,0.15); color: var(--gold); }
+  .badge-teal { background: rgba(0,212,170,0.15); color: var(--teal); }
+  .badge-pink { background: rgba(255,95,160,0.15); color: var(--pink); }
+  .badge-purple { background: rgba(124,92,255,0.15); color: #a07aff; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; }
+  .testimonial {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 2rem;
+    transition: all 0.3s;
+  }
+  .testimonial:hover { border-color: var(--border2); transform: translateY(-3px); }
+  .testimonial-quote { font-size: 2.5rem; line-height: 1; color: var(--accent); margin-bottom: 1rem; font-family: Georgia, serif; }
+  .testimonial-text { font-size: 0.95rem; line-height: 1.7; color: var(--text2); margin-bottom: 1.5rem; }
+  .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+  .testimonial-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.85rem; color: #fff; flex-shrink: 0;
+  }
+  .testimonial-name { font-weight: 600; font-size: 0.9rem; }
+  .testimonial-role { font-size: 0.75rem; color: var(--text3); }
+  .stars { color: var(--gold); font-size: 0.8rem; margin-bottom: 0.75rem; }
+
+  /* ── CITY SECTIONS GRID ── */
+  .city-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+  }
+  .city-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); overflow: hidden;
+    transition: all 0.3s; text-decoration: none; color: inherit;
+  }
+  .city-card:hover { transform: translateY(-4px); border-color: var(--border2); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+  .city-card-thumb {
+    height: 140px; display: flex; align-items: center; justify-content: center;
+    font-size: 3.5rem; position: relative;
+  }
+  .city-card-body { padding: 1.25rem; }
+  .city-card-body h4 { font-weight: 700; font-size: 1rem; margin-bottom: 0.35rem; }
+  .city-card-body p { font-size: 0.8rem; color: var(--text2); line-height: 1.55; }
+
+  /* ── CHRONICLES SECTION ── */
+  .chronicles-feature {
+    background: linear-gradient(135deg, rgba(240,180,41,0.06), rgba(0,212,170,0.04));
+    border: 1px solid rgba(240,180,41,0.15);
+    border-radius: var(--radius-xl);
+    padding: 3rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+  }
+  .chronicles-posts { display: flex; flex-direction: column; gap: 1rem; }
+  .chronicle-post {
+    background: var(--surface);
+    border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    display: flex; align-items: center; gap: 1rem; transition: all 0.2s;
+    text-decoration: none; color: inherit;
+  }
+  .chronicle-post:hover { border-color: var(--border2); background: var(--surface2); }
+  .chronicle-num {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: var(--surface2); display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 700; color: var(--text3); flex-shrink: 0;
+  }
+  .chronicle-title { font-size: 0.9rem; font-weight: 500; }
+  .chronicle-meta { font-size: 0.75rem; color: var(--text3); margin-top: 2px; }
+
+  /* ── FAQ ── */
+  .faq-list { display: flex; flex-direction: column; gap: 0.75rem; max-width: 780px; margin: 0 auto; }
+  .faq-item {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden; transition: border-color 0.2s;
+  }
+  .faq-item.open { border-color: var(--border2); }
+  .faq-q {
+    width: 100%; display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 1.5rem; background: none; border: none;
+    color: var(--text); font-size: 0.95rem; font-weight: 500;
+    cursor: pointer; text-align: left; gap: 1rem; font-family: inherit;
+  }
+  .faq-icon { flex-shrink: 0; transition: transform 0.3s; color: var(--text3); font-size: 1.1rem; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); color: var(--accent); }
+  .faq-a {
+    padding: 0 1.5rem; max-height: 0; overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s;
+    color: var(--text2); font-size: 0.875rem; line-height: 1.7;
+  }
+  .faq-item.open .faq-a { max-height: 200px; padding: 0 1.5rem 1.25rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 4rem 2rem 2rem;
+  }
+  .footer-grid {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  .footer-brand p { font-size: 0.875rem; color: var(--text2); line-height: 1.7; margin-top: 0.75rem; }
+  .footer-col h5 { font-size: 0.8rem; font-weight: 600; color: var(--text3); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1rem; }
+  .footer-col a { display: block; color: var(--text2); text-decoration: none; font-size: 0.875rem; padding: 0.25rem 0; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--text); }
+  .footer-bottom {
+    max-width: 1100px; margin: 0 auto;
+    border-top: 1px solid var(--border); padding-top: 1.5rem;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-bottom p { font-size: 0.8rem; color: var(--text3); }
+  .footer-socials { display: flex; gap: 0.75rem; }
+  .social-btn {
+    width: 34px; height: 34px; border-radius: 8px;
+    border: 1px solid var(--border); display: flex; align-items: center; justify-content: center;
+    color: var(--text3); font-size: 0.85rem; text-decoration: none; transition: all 0.2s;
+  }
+  .social-btn:hover { color: var(--text); border-color: var(--border2); background: var(--surface2); }
+
+  /* ── REVEAL ANIMATIONS ── */
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* ── DIVIDERS ── */
+  .section-divider {
+    height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 0 2rem;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: block; }
+    .hero-stats { gap: 1.5rem; }
+    .hero-stat-num { font-size: 1.5rem; }
+    .bento-grid { grid-template-columns: 1fr; }
+    .bento-a,.bento-b,.bento-c,.bento-d,.bento-e { grid-column: span 1; }
+    .chronicles-feature { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    section { padding: 4rem 1.25rem; }
+    .search-section { padding: 2.5rem 1.5rem; }
+    .search-box { flex-direction: column; }
+    .search-btn { width: 100%; }
+  }
+  @media (max-width: 480px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .hero-stats { flex-direction: column; gap: 1.25rem; }
+    .hero-divider { display: none; }
+  }
+
+  /* ── MOBILE MENU ── */
+  .mobile-menu {
+    position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
+    background: rgba(5,8,17,0.95); backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem;
+    display: none; flex-direction: column; gap: 0.25rem;
+    transform: translateY(-10px); opacity: 0;
+    transition: all 0.25s;
+  }
+  .mobile-menu.open { display: flex; transform: none; opacity: 1; }
+  .mobile-menu a {
+    padding: 0.75rem 1rem; border-radius: 8px;
+    color: var(--text2); text-decoration: none; font-size: 0.95rem; font-weight: 500;
+    transition: all 0.15s;
+  }
+  .mobile-menu a:hover { color: var(--text); background: var(--surface2); }
+
+  /* ── GLOW ACCENTS ── */
+  .glow-dot {
+    display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+    animation: glowPulse 2s infinite;
+  }
+  @keyframes glowPulse { 0%,100%{box-shadow:0 0 4px currentColor} 50%{box-shadow:0 0 14px currentColor} }
+
+  /* Progress bar (top of page) */
+  #progress-bar {
+    position: fixed; top: 0; left: 0; height: 2px; z-index: 200;
+    background: linear-gradient(90deg, var(--accent), var(--teal));
+    width: 0%; transition: width 0.1s;
+  }
+</style>
+</head>
+<body>
+
+<!-- Progress bar -->
+<div id="progress-bar"></div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-badge">W</div>
+    <span>Welcome to Bhopal</span>
+  </a>
+  <div class="nav-links">
+    <a href="#explore">Explore</a>
+    <a href="#city">City Life</a>
+    <a href="#opportunities">Opportunities</a>
+    <a href="#testimonials">Stories</a>
+    <a href="https://www.instagram.com/welcometobhopal" target="_blank" class="nav-cta">Follow Us ↗</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#explore" onclick="closeMobile()">Explore</a>
+  <a href="#city" onclick="closeMobile()">City Life</a>
+  <a href="#opportunities" onclick="closeMobile()">Opportunities</a>
+  <a href="#testimonials" onclick="closeMobile()">Stories</a>
+  <a href="https://www.instagram.com/welcometobhopal" target="_blank">Follow on Instagram ↗</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-eyebrow">
+    <span class="hero-eyebrow-dot"></span>
+    City of Lakes · Madhya Pradesh · India
+  </div>
+  <h1>
+    <span class="line-city">Discover Bhopal,</span>
+    <span class="line-lakes">Feel the Belonging</span>
+  </h1>
+  <p class="hero-sub">Your digital gateway to the heart of India — culture, opportunities, food, community, and unforgettable experiences await.</p>
+  <div class="hero-actions">
+    <a href="#explore" class="btn-primary">Explore the City →</a>
+    <a href="#opportunities" class="btn-ghost">Join AIESEC Bhopal</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num">1.9M+</div>
+      <div class="hero-stat-label">City Population</div>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">2</div>
+      <div class="hero-stat-label">UNESCO World Heritage Sites Nearby</div>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">30+</div>
+      <div class="hero-stat-label">Lakes &amp; Water Bodies</div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-mouse"></div>
+    <span class="scroll-text">Scroll to explore</span>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- EXPLORE SECTION -->
+<section id="explore">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-label">City Resources</div>
+      <h2 class="section-title">Everything about <em>Bhopal</em></h2>
+      <p class="section-sub">From city guides to cost booklets — every resource you need to navigate and love this city.</p>
+    </div>
+    <div class="explore-grid">
+      <a href="https://www.canva.com/design/DAHCuDhtVPo/HG2iH0Bc5wsIXUKjUJ5PSw/edit" target="_blank" class="card reveal reveal-delay-1">
+        <div class="card-icon" style="background:rgba(79,124,255,0.12)">🗺️</div>
+        <span class="card-tag badge-blue">Featured Guide</span>
+        <h3>City Booklet</h3>
+        <p>A comprehensive visual guide to Bhopal's neighbourhoods, landmarks, culture, and essentials.</p>
+        <span class="card-arrow">→</span>
+      </a>
+      <a href="https://canva.link/ey5094ypdpklijh" target="_blank" class="card reveal reveal-delay-2">
+        <div class="card-icon" style="background:rgba(240,180,41,0.12)">💰</div>
+        <span class="card-tag badge-gold">Smart Living</span>
+        <h3>Cost Booklet</h3>
+        <p>Real cost-of-living data — food, transport, housing, and lifestyle expenses for newcomers.</p>
+        <span class="card-arrow">→</span>
+      </a>
+      <a href="https://www.instagram.com/_chronicles_2026_" target="_blank" class="card reveal reveal-delay-3">
+        <div class="card-icon" style="background:rgba(255,95,160,0.12)">✨</div>
+        <span class="card-tag badge-pink">Stories</span>
+        <h3>Chronicles 2026</h3>
+        <p>Real stories, candid moments, and authentic experiences from the Bhopal community.</p>
+        <span class="card-arrow">→</span>
+      </a>
+      <a href="https://drive.google.com/drive/folders/1EBqVO8-3Wv6zmnk9yRNLcXaOGJTEdTCV" target="_blank" class="card reveal reveal-delay-1">
+        <div class="card-icon" style="background:rgba(0,212,170,0.12)">🌏</div>
+        <span class="card-tag badge-teal">AIESEC</span>
+        <h3>EP Packages</h3>
+        <p>Explore international exchange programme packages curated for Bhopal's global community.</p>
+        <span class="card-arrow">→</span>
+      </a>
+      <a href="https://drive.google.com/drive/folders/1-qoi7-t1ZczULPFevLGhZzaFvim4LtUk" target="_blank" class="card reveal reveal-delay-2">
+        <div class="card-icon" style="background:rgba(124,92,255,0.12)">💬</div>
+        <span class="card-tag badge-purple">Community</span>
+        <h3>Experiences &amp; Testimonials</h3>
+        <p>Read first-hand accounts from people who lived, worked, and grew in Bhopal.</p>
+        <span class="card-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- AIESEC SEARCH TOOL -->
+<section id="opportunities">
+  <div class="container">
+    <div class="search-section reveal">
+      <div class="section-label" style="justify-content:center">AIESEC in Bhopal</div>
+      <h2 class="section-title" style="text-align:center">Find Your <em>Opportunity</em></h2>
+      <p class="section-sub" style="margin:0.75rem auto 0;text-align:center">Search internships, projects, and job descriptions — your next chapter starts here.</p>
+      <div class="search-box">
+        <input type="text" class="search-input" placeholder="Search roles, projects, skills…" id="search-query"/>
+        <button class="search-btn" onclick="openSearch()">Search ↗</button>
+      </div>
+      <div class="search-links">
+        <a href="https://docs.google.com/spreadsheets/d/1NjDweAu9sN0Ul72VR58KPVCHZpWi8VmAEhuRsIxtgpo" target="_blank" class="search-link">📊 Search Tool 26.27</a>
+        <a href="https://drive.google.com/drive/folders/1ltNlwLcGaJNhs9JLMILOxgFo4krVev3g" target="_blank" class="search-link">📄 Job Descriptions</a>
+        <a href="https://drive.google.com/drive/folders/1GVfHC7Ie1samd3vS9bCqtI0KXxXKGj6A" target="_blank" class="search-link">📋 Project Booklets</a>
+      </div>
+    </div>
+
+    <!-- Bento opportunities -->
+    <div style="margin-top:3rem" class="reveal">
+      <div class="section-head">
+        <div class="section-label">What's Available</div>
+        <h2 class="section-title">Open <em>Opportunities</em></h2>
+      </div>
+    </div>
+    <div class="bento-grid reveal">
+      <div class="bento-card bento-a" style="background:linear-gradient(135deg,rgba(79,124,255,0.08),rgba(124,92,255,0.04))">
+        <span class="bento-badge badge-blue">Global Exchange</span>
+        <div class="big-num">26.27</div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.5rem">AIESEC EP Cycle</h3>
+        <p style="color:var(--text2);font-size:0.875rem;line-height:1.65">Join the 2026–27 exchange cycle. Work, volunteer, or intern globally while representing Bhopal on the world stage.</p>
+        <a href="https://drive.google.com/drive/folders/1EBqVO8-3Wv6zmnk9yRNLcXaOGJTEdTCV" target="_blank" class="btn-primary" style="margin-top:1.25rem;display:inline-flex;font-size:0.85rem;padding:0.6rem 1.25rem">Browse Packages →</a>
+      </div>
+      <div class="bento-card bento-b">
+        <span class="bento-badge badge-gold">Career</span>
+        <div class="big-num" style="background:linear-gradient(135deg,var(--gold),#ffda85);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">50+</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.4rem">Job Descriptions</h3>
+        <p style="color:var(--text2);font-size:0.8rem;line-height:1.6">Curated roles across sectors. Find your fit in Bhopal's growing economy.</p>
+        <a href="https://drive.google.com/drive/folders/1ltNlwLcGaJNhs9JLMILOxgFo4krVev3g" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:1rem;color:var(--gold);font-size:0.8rem;font-weight:600;text-decoration:none">View JDs →</a>
+      </div>
+      <div class="bento-card bento-c">
+        <span class="bento-badge badge-teal">Projects</span>
+        <div class="big-num" style="background:linear-gradient(135deg,var(--teal),#80ffdf);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">10+</div>
+        <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:0.4rem">Project Booklets</h3>
+        <p style="color:var(--text2);font-size:0.8rem;line-height:1.6">Deep-dive into ongoing projects in Bhopal looking for passionate contributors.</p>
+        <a href="https://drive.google.com/drive/folders/1GVfHC7Ie1samd3vS9bCqtI0KXxXKGj6A" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:1rem;color:var(--teal);font-size:0.8rem;font-weight:600;text-decoration:none">Explore →</a>
+      </div>
+      <div class="bento-card bento-d">
+        <span class="bento-badge badge-pink">Community</span>
+        <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:0.5rem">Chronicles ✨</h3>
+        <p style="color:var(--text2);font-size:0.8rem;line-height:1.6">Follow real experiences from exchange participants living in and coming to Bhopal.</p>
+        <a href="https://www.instagram.com/_chronicles_2026_" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:1rem;color:var(--pink);font-size:0.8rem;font-weight:600;text-decoration:none">Follow ↗</a>
+      </div>
+      <div class="bento-card bento-e">
+        <span class="bento-badge badge-purple">Heritage</span>
+        <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:0.5rem">City of Lakes</h3>
+        <p style="color:var(--text2);font-size:0.8rem;line-height:1.6">Upper Lake, Lower Lake, Bhoj Wetland — a UNESCO Ramsar site at your doorstep.</p>
+        <div style="font-size:2rem;margin-top:1rem">🏞️</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CITY LIFE -->
+<section id="city">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-label">Explore Bhopal</div>
+      <h2 class="section-title">A City Like <em>No Other</em></h2>
+      <p class="section-sub">Ancient heritage and modern energy in one of India's most liveable cities.</p>
+    </div>
+    <div class="city-grid">
+      <div class="city-card reveal reveal-delay-1">
+        <div class="city-card-thumb" style="background:linear-gradient(135deg,rgba(79,124,255,0.12),rgba(79,124,255,0.04))">🕌</div>
+        <div class="city-card-body">
+          <h4>Heritage &amp; History</h4>
+          <p>From the magnificent Taj-ul-Masajid to the Bhimbetka Rock Shelters — Bhopal wears its history proudly.</p>
+        </div>
+      </div>
+      <div class="city-card reveal reveal-delay-2">
+        <div class="city-card-thumb" style="background:linear-gradient(135deg,rgba(0,212,170,0.12),rgba(0,212,170,0.04))">🌊</div>
+        <div class="city-card-body">
+          <h4>Lakes &amp; Nature</h4>
+          <p>30+ lakes, the Van Vihar National Park, and lush green landscapes make Bhopal a nature lover's haven.</p>
+        </div>
+      </div>
+      <div class="city-card reveal reveal-delay-3">
+        <div class="city-card-thumb" style="background:linear-gradient(135deg,rgba(240,180,41,0.12),rgba(240,180,41,0.04))">🍛</div>
+        <div class="city-card-body">
+          <h4>Food Culture</h4>
+          <p>Bhopal's street food is legendary — seekh kebabs, poha, bhutte ka kees, and the iconic bhopali gosht korma.</p>
+        </div>
+      </div>
+      <div class="city-card reveal reveal-delay-1">
+        <div class="city-card-thumb" style="background:linear-gradient(135deg,rgba(255,95,160,0.12),rgba(255,95,160,0.04))">🎨</div>
+        <div class="city-card-body">
+          <h4>Art &amp; Culture</h4>
+          <p>The Bharat Bhavan cultural complex, Bhojpur temple, and a thriving indie arts scene define Bhopal's creative soul.</p>
+        </div>
+      </div>
+      <div class="city-card reveal reveal-delay-2">
+        <div class="city-card-thumb" style="background:linear-gradient(135deg,rgba(124,92,255,0.12),rgba(124,92,255,0.04))">🎓</div>
+        <div class="city-card-body">
+          <h4>Education Hub</h4>
+          <p>IIT Bhopal, NIT, AIIMS, and dozens of premier institutions make it a dynamic city for students.</p>
+        </div>
+      </div>
+      <div class="city-card reveal reveal-delay-3">
+        <div class="city-card-thumb" style="background:linear-gradient(135deg,rgba(0,212,170,0.08),rgba(79,124,255,0.08))">🤝</div>
+        <div class="city-card-body">
+          <h4>Community First</h4>
+          <p>Warm, welcoming people, tight-knit communities, and a culture of belonging that lives up to every promise.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CHRONICLES -->
+<section>
+  <div class="container">
+    <div class="chronicles-feature reveal">
+      <div>
+        <div class="section-label">Chronicles 2026</div>
+        <h2 class="section-title">Real Stories,<br><em>Real People</em></h2>
+        <p class="section-sub" style="margin-top:0.75rem">Chronicles is our living archive of Bhopal experiences — raw, personal, and authentic. Follow along as our community documents their journey.</p>
+        <div style="display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap">
+          <a href="https://www.instagram.com/_chronicles_2026_" target="_blank" class="btn-primary" style="font-size:0.9rem;padding:0.75rem 1.5rem">Follow Chronicles ↗</a>
+          <a href="https://drive.google.com/drive/folders/1-qoi7-t1ZczULPFevLGhZzaFvim4LtUk" target="_blank" class="btn-ghost" style="font-size:0.9rem;padding:0.75rem 1.5rem">Read All Experiences</a>
+        </div>
+      </div>
+      <div class="chronicles-posts">
+        <div class="chronicle-post">
+          <div class="chronicle-num">01</div>
+          <div>
+            <div class="chronicle-title">Arriving in Bhopal as an Exchange Participant</div>
+            <div class="chronicle-meta">First impressions · Culture shock · Belonging</div>
+          </div>
+        </div>
+        <div class="chronicle-post">
+          <div class="chronicle-num">02</div>
+          <div>
+            <div class="chronicle-title">Street Food Trails: A Week of Discovery</div>
+            <div class="chronicle-meta">Food culture · Local markets · Hidden gems</div>
+          </div>
+        </div>
+        <div class="chronicle-post">
+          <div class="chronicle-num">03</div>
+          <div>
+            <div class="chronicle-title">Working with AIESEC Bhopal — What I Learned</div>
+            <div class="chronicle-meta">Leadership · Growth · Friendships</div>
+          </div>
+        </div>
+        <div class="chronicle-post">
+          <div class="chronicle-num">04</div>
+          <div>
+            <div class="chronicle-title">Sunset at Upper Lake — A Moment I'll Never Forget</div>
+            <div class="chronicle-meta">Nature · Photography · Stillness</div>
+          </div>
+        </div>
+        <a href="https://www.instagram.com/_chronicles_2026_" target="_blank" style="display:flex;align-items:center;gap:8px;color:var(--accent);font-size:0.85rem;font-weight:600;text-decoration:none;padding:0.75rem 0">View all chronicles on Instagram →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-label">Voices of Bhopal</div>
+      <h2 class="section-title">What People <em>Say</em></h2>
+      <p class="section-sub">From exchange participants to lifelong residents — here's what makes Bhopal unforgettable.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial reveal reveal-delay-1">
+        <div class="testimonial-quote">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">Coming to Bhopal felt like arriving home even though I was thousands of kilometres away. The warmth of the people here is something I've never experienced anywhere else in the world.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:linear-gradient(135deg,var(--accent),var(--accent2))">AK</div>
+          <div>
+            <div class="testimonial-name">Arjun K.</div>
+            <div class="testimonial-role">EP from Mumbai · AIESEC 2025</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal reveal-delay-2">
+        <div class="testimonial-quote">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">The city's energy surprised me. It's calm and historic but also modern and ambitious. I came for three months and stayed for a year. Bhopal has a way of doing that to you.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:linear-gradient(135deg,var(--teal),#0090aa)">SL</div>
+          <div>
+            <div class="testimonial-name">Sofia L.</div>
+            <div class="testimonial-role">Exchange Participant from Brazil</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal reveal-delay-3">
+        <div class="testimonial-quote">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">The AIESEC Bhopal team is phenomenal. They made every step of the process smooth, and the city itself exceeded every expectation. The food alone is worth the trip.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" style="background:linear-gradient(135deg,var(--gold),#e08000)">RM</div>
+          <div>
+            <div class="testimonial-name">Riya M.</div>
+            <div class="testimonial-role">Volunteer · Global Citizen Programme</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem" class="reveal">
+      <a href="https://drive.google.com/drive/folders/1-qoi7-t1ZczULPFevLGhZzaFvim4LtUk" target="_blank" class="btn-ghost">Read All Testimonials →</a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <div class="section-head reveal" style="text-align:center">
+      <div class="section-label" style="justify-content:center">Questions</div>
+      <h2 class="section-title">Things People <em>Ask</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          What is AIESEC in Bhopal?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">AIESEC in Bhopal is the local chapter of the world's largest youth-run organisation. It connects young people with international internship and volunteer opportunities, while also hosting incoming exchange participants in Bhopal. Join to develop leadership skills, experience global cultures, and build a lifelong network.</div>
+      </div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          How do I apply for an EP (Exchange Participant) programme?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Browse the EP Packages collection on Google Drive, then connect with the AIESEC Bhopal team through Instagram or the search tool. You'll get guidance on which programme fits your background, how to apply, and what to expect during your exchange.</div>
+      </div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          What is the cost of living in Bhopal?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Bhopal is one of India's most affordable major cities. A comfortable lifestyle, including accommodation, food, transport, and leisure, can typically be maintained for ₹12,000–₹20,000 per month. Our Cost Booklet breaks this down in detail with real data.</div>
+      </div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          What languages do people speak in Bhopal?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Hindi is the primary language, and English is widely spoken among students, professionals, and in business contexts. The AIESEC community is international and communicates primarily in English, so newcomers are always welcome.</div>
+      </div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          Is Bhopal safe for visitors and exchange participants?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Yes, Bhopal is widely regarded as one of the safer and more welcoming cities in central India. The community is known for hospitality, and the AIESEC team provides on-ground support throughout your stay to ensure a smooth and safe experience.</div>
+      </div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          How do I follow Chronicles and stay updated?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Follow <a href="https://www.instagram.com/_chronicles_2026_" target="_blank" style="color:var(--accent)">@_chronicles_2026_</a> on Instagram for regular updates, stories, and experiences from the Bhopal community. You can also access the full archive on Google Drive via the link on this page.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CTA BANNER -->
+<section style="padding:5rem 2rem">
+  <div class="container">
+    <div class="reveal" style="text-align:center;background:linear-gradient(135deg,rgba(79,124,255,0.1),rgba(124,92,255,0.08));border:1px solid rgba(79,124,255,0.2);border-radius:var(--radius-xl);padding:4rem 2rem;position:relative;overflow:hidden">
+      <div style="position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:400px;height:200px;background:radial-gradient(ellipse,rgba(79,124,255,0.15),transparent 70%);pointer-events:none"></div>
+      <div class="section-label" style="justify-content:center;margin-bottom:1.25rem">Ready to Begin?</div>
+      <h2 style="font-size:clamp(1.8rem,4vw,3rem);font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin-bottom:1rem">
+        Join the <span style="background:linear-gradient(135deg,var(--gold),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Bhopal Family</span>
+      </h2>
+      <p style="color:var(--text2);max-width:480px;margin:0 auto 2rem;font-size:1rem;line-height:1.7">Whether you're an exchange participant, a local explorer, or someone chasing opportunity — Bhopal welcomes you with open arms.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="https://docs.google.com/spreadsheets/d/1NjDweAu9sN0Ul72VR58KPVCHZpWi8VmAEhuRsIxtgpo" target="_blank" class="btn-primary">Use the Search Tool →</a>
+        <a href="https://www.instagram.com/welcometobhopal" target="_blank" class="btn-ghost">Follow on Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo" style="text-decoration:none">
+        <div class="nav-logo-badge">W</div>
+        <span style="font-weight:700">Welcome to Bhopal</span>
+      </a>
+      <p>Your digital gateway to the City of Lakes. Discover, explore, and belong in one of India's most vibrant and welcoming cities.</p>
+      <div class="footer-socials" style="margin-top:1.25rem">
+        <a href="https://www.instagram.com/welcometobhopal" target="_blank" class="social-btn" aria-label="Instagram">📷</a>
+        <a href="https://docs.google.com/spreadsheets/d/1NjDweAu9sN0Ul72VR58KPVCHZpWi8VmAEhuRsIxtgpo" target="_blank" class="social-btn" aria-label="Search Tool">🔍</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Explore</h5>
+      <a href="https://www.canva.com/design/DAHCuDhtVPo/HG2iH0Bc5wsIXUKjUJ5PSw/edit" target="_blank">City Booklet</a>
+      <a href="https://canva.link/ey5094ypdpklijh" target="_blank">Cost Booklet</a>
+      <a href="https://www.instagram.com/_chronicles_2026_" target="_blank">Chronicles ✨</a>
+      <a href="https://drive.google.com/drive/folders/1-qoi7-t1ZczULPFevLGhZzaFvim4LtUk" target="_blank">Testimonials</a>
+    </div>
+    <div class="footer-col">
+      <h5>Opportunities</h5>
+      <a href="https://docs.google.com/spreadsheets/d/1NjDweAu9sN0Ul72VR58KPVCHZpWi8VmAEhuRsIxtgpo" target="_blank">AIESEC Search Tool</a>
+      <a href="https://drive.google.com/drive/folders/1ltNlwLcGaJNhs9JLMILOxgFo4krVev3g" target="_blank">Job Descriptions</a>
+      <a href="https://drive.google.com/drive/folders/1GVfHC7Ie1samd3vS9bCqtI0KXxXKGj6A" target="_blank">Project Booklets</a>
+      <a href="https://drive.google.com/drive/folders/1EBqVO8-3Wv6zmnk9yRNLcXaOGJTEdTCV" target="_blank">EP Packages</a>
+    </div>
+    <div class="footer-col">
+      <h5>City Info</h5>
+      <a href="#city">Heritage Sites</a>
+      <a href="#city">Food Culture</a>
+      <a href="#city">Lakes &amp; Nature</a>
+      <a href="#city">Education</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Welcome to Bhopal · AIESEC in Bhopal · Made with 💙 for the City of Lakes</p>
+    <p style="color:var(--text3)">Bhopal, Madhya Pradesh, India</p>
+  </div>
+</footer>
+
+<script>
+// Progress bar
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  document.getElementById('progress-bar').style.width = pct + '%';
+});
+
+// Mobile menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+function closeMobile() { mobileMenu.classList.remove('open'); }
+
+// Nav scroll style
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 80) {
+    nav.style.background = 'rgba(5,8,17,0.92)';
+  } else {
+    nav.style.background = 'rgba(5,8,17,0.7)';
+  }
+});
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+// FAQ toggle
+function toggleFaq(item) {
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// Search tool open
+function openSearch() {
+  const q = document.getElementById('search-query').value.trim();
+  if (q) {
+    window.open('https://docs.google.com/spreadsheets/d/1NjDweAu9sN0Ul72VR58KPVCHZpWi8VmAEhuRsIxtgpo', '_blank');
+  } else {
+    window.open('https://docs.google.com/spreadsheets/d/1NjDweAu9sN0Ul72VR58KPVCHZpWi8VmAEhuRsIxtgpo', '_blank');
+  }
+}
+
+// Enter key search
+document.getElementById('search-query').addEventListener('keydown', e => {
+  if (e.key === 'Enter') openSearch();
+});
+
+// Smooth anchor scrolling
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+      closeMobile();
+    }
+  });
+});
+</script>
+</body>
+</html>
