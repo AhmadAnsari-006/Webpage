@@ -7,8 +7,15 @@ from flask import Flask, render_template, request, jsonify
 from datetime import datetime
 import os
 
+# Determine paths
+backend_dir = os.path.dirname(os.path.abspath(__file__))
+src_dir = os.path.dirname(backend_dir)
+frontend_dir = os.path.join(src_dir, 'frontend')
+templates_dir = os.path.join(frontend_dir, 'templates')
+static_dir = os.path.join(frontend_dir, 'static')
+
 # Initialize Flask app
-app = Flask(__name__, template_folder='templates', static_folder='static')
+app = Flask(__name__, template_folder=templates_dir, static_folder=static_dir)
 
 # Configuration
 app.config['DEBUG'] = True
@@ -48,7 +55,7 @@ def get_city_stats():
     """
     stats = {
         'population': '1.9M+',
-        'unesco_sites': 2,
+        'unesco_sites': 4,
         'lakes': '30+',
         'founding_year': 1707,
         'notable_features': [
@@ -84,7 +91,7 @@ def get_social_links():
     """
     links = {
         'instagram': {
-            'igv_bhopal': 'https://www.instagram.com/igv.bhopal?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
+            'igv_bhopal': 'https://www.instagram.com/igv.bhopal',
             'welcome_to_bhopal': 'https://www.instagram.com/welcometobhopal',
             'chronicles_2026': 'https://www.instagram.com/_chronicles_2026_'
         },
@@ -165,9 +172,9 @@ def internal_error(error):
 
 if __name__ == '__main__':
     # Create necessary directories if they don't exist
-    os.makedirs('templates', exist_ok=True)
-    os.makedirs('static/css', exist_ok=True)
-    os.makedirs('static/js', exist_ok=True)
+    os.makedirs(templates_dir, exist_ok=True)
+    os.makedirs(os.path.join(static_dir, 'css'), exist_ok=True)
+    os.makedirs(os.path.join(static_dir, 'js'), exist_ok=True)
     
     # Run the Flask application
     app.run(
